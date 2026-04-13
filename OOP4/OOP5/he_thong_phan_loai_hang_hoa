@@ -1,0 +1,50 @@
+class HangHoa:
+    def __init__(self, ten, gia):
+        self.ten = ten
+        self.gia = gia
+
+    def inThongTin(self):
+        print(f"Tên hàng: {self.ten}, Giá: {self.gia}")
+
+
+class HangDienMay(HangHoa):
+    def __init__(self, ten, gia, bao_hanh, dien_ap, cong_suat):
+        super().__init__(ten, gia)
+        self.bao_hanh = bao_hanh
+        self.dien_ap = dien_ap
+        self.cong_suat = cong_suat
+
+    def inThongTin(self):
+        super().inThongTin()
+        print(f"Bảo hành: {self.bao_hanh} tháng, Điện áp: {self.dien_ap}V, Công suất: {self.cong_suat}W")
+
+
+class HangSanhSu(HangHoa):
+    def __init__(self, ten, gia, nguyen_lieu):
+        super().__init__(ten, gia)
+        self.nguyen_lieu = nguyen_lieu
+
+    def inThongTin(self):
+        super().inThongTin()
+        print(f"Nguyên liệu: {self.nguyen_lieu}")
+
+
+class HangThucPham(HangHoa):
+    def __init__(self, ten, gia, nsx, hsd):
+        super().__init__(ten, gia)
+        self.nsx = nsx
+        self.hsd = hsd
+
+    def inThongTin(self):
+        super().inThongTin()
+        print(f"Ngày sản xuất: {self.nsx}, Hạn sử dụng: {self.hsd}")
+
+
+# Ví dụ sử dụng
+dm = HangDienMay("Máy giặt", 5000000, 24, 220, 2000)
+ss = HangSanhSu("Bát gốm", 100000, "Gốm sứ cao cấp")
+tp = HangThucPham("Sữa tươi", 30000, "01/04/2026", "01/05/2026")
+
+dm.inThongTin()
+ss.inThongTin()
+tp.inThongTin()
